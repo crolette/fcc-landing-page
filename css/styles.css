@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* RESET CSS */ 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+*, *::before, *::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* END RESET CSS */
+
+:root{
+    --bg-button: #f1c40f;
+    --icons: darkorange;
+    --margin-top: 64px;
+}
+
+/* TYPOGRAPHY */
+
+body{
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.container > * + * {
+    margin-top: var(--margin-top);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* HEADER */
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    max-height: 125px;
+    padding: 16px;
+    position: fixed;
+    top:0;
+    background-color: whitesmoke;
+
+}
+
+.logo{
+    width: 100%;
+    text-align: center;
+}
+
+.logo > img{
+    max-width: 300px;
+    width: 75%;
+}
+
+nav{
+    width: 35vw;
+    display: flex;
+    align-items: center;
+    row-gap: 8px;
+}
+
+.container{
+    margin-top: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* NEWSLETTER */
+.newsletter{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;   
+}
+
+.newsletter__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+}
+
+input[type="email"]{
+    padding: 4px;
+    width: 300px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.btn{
+    background-color: var(--bg-button);
+    text-transform: uppercase;
+    width: 150px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding: 4px;
+    border: none;
+}
+
+/* REASSURANCE */
+.reassurance{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    row-gap: 64px;
+}
+
+.reassurance__icon{
+    display: none;
+}
+
+.reassurance__content{
+    text-align: center;
+}
+
+/* VIDEO */
+
+.video {
+    position: relative;
+    display: grid;
+    width: 90%;
+    max-width: 1000px;
+    z-index: -100;
+}
+/* Le SVG va imposer le ratio */
+.video > svg {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Pour éviter que les images / iframe pousse le contenu, on utilise l'approche absolue */
+.video > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* PRICING CARDS */ 
+.cards__prices{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 275px;
+    height: 350px;
+    border: 2px solid black;
+    padding-bottom: 16px;
+}
+
+.card__title{
+    width: 100%;
+    padding: 16px 0;
+    background-color: lightgray;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.price{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card__advantages li{
+    text-align: center;
+    line-height: 2;
+}
+
+/* FOOTER */
+footer{
+    margin-top: 64px;
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: lightgray;
+    row-gap: 8px;
+}
+
+.footer__links li{
+    display: inline-block;
+    padding: 0 8px;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 650px) {
+    nav{
+        flex-direction: column;
+    }
+}
+
+
+@media screen and (min-width: 600px) {
+    header{
+        justify-content: space-around;
+        flex-wrap: nowrap;
+    }
+
+    .logo{
+        width: 60vw;
+        text-align: left;
+    }
+
+    .logo > img {
+        max-height: 55px;
+    } 
+    
+    nav{
+        justify-content: space-between;
+    }
+
+    .reassurance{
+        width: 90%;
+    }
+
+    .reassurance__item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 32px;
+    }
+
+    .reassurance__content{
+        width: 75%;
+    }
+
+    .reassurance__content > *{
+        text-align: left;
+    }
+
+    .reassurance__icon{
+        display: flex;
+        justify-content: center;
+        width: 15%;
+        font-size: 64px;
+        color: var(--icons);
+    }
+
+
+}
+
+
+@media screen and (min-width: 1000px) {
+    .reassurance{
+        width: 1000px;
+    }
+
+    .cards__prices{
+        display: flex;
+        flex-direction: row;
+        column-gap: 16px;
+    }
+
+}
+
+
